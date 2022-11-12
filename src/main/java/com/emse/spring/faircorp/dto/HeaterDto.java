@@ -6,8 +6,9 @@ public class HeaterDto {
     private String name;
     private Long power;
     private HeaterStatus heaterStatus;
-    private String roomName;
     private Long roomId;
+    private String roomName;
+
 
     public HeaterDto() {
     }
@@ -17,51 +18,58 @@ public class HeaterDto {
         this.name = heater.getName();
         this.power = heater.getPower();
         this.heaterStatus = heater.getHeaterStatus();
-        this.roomName = heater.getRoom().getName();
         this.roomId = heater.getRoom().getId();
+        this.roomName = heater.getRoom().getName();
     }
 
-    public Long getId() {
-        return id;
-    }
 
     public void setId(Long id) {
         this.id = id;
     }
+    public Long getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;
     }
+    public String getName() {
+        return name;
+    }
 
-    public Long getPower() { return power; }
 
     public void setPower(Long power) {
         this.power = power;
     }
-
-    public HeaterStatus getHeaterStatus() {
-        return heaterStatus;
+    public Long getPower() {
+        return power;
     }
+
 
     public void setHeaterStatus(HeaterStatus heaterStatus) {
         this.heaterStatus = heaterStatus;
     }
-
-    public String getRoomName() {
-        return roomName;
+    public HeaterStatus getHeaterStatus() {
+        return heaterStatus;
     }
 
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
-    }
-
-    public Long getRoomId() {
-        return roomId;
-    }
 
     public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
+    public Long getRoomId() {
+        return roomId;
+    }
+
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+    public String getRoomName() {
+        return roomName;
+    }
+
+
+
 }
