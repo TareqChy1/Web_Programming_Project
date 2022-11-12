@@ -1,20 +1,22 @@
 package com.emse.spring.faircorp.dto;
 import com.emse.spring.faircorp.model.Building;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-
-public class BuildingDto {
+public class BuildingCmdDto {
     private Long id;
     private String name;
     private Double outsideTemperature;
+    private Set<RoomCmdDto> rooms;
 
-
-    public BuildingDto() {
+    public BuildingCmdDto() {
     }
 
-    public BuildingDto(Building building) {
+    public BuildingCmdDto(Building building) {
         this.id = building.getId();
         this.name = building.getName();
         this.outsideTemperature = building.getOutsideTemperature();
+        if(building.getRooms() != null) {this.rooms = building.getRooms().stream().map(RoomCmdDto::new).collect(Collectors.toSet());}
     }
 
 
@@ -41,5 +43,12 @@ public class BuildingDto {
         return outsideTemperature;
     }
 
+
+    public void setRooms(Set<RoomCmdDto> rooms) {
+        this.rooms = rooms;
+    }
+    public Set<RoomCmdDto> getRooms() {
+        return rooms;
+    }
 
 }
