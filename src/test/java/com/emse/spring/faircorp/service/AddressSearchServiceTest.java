@@ -28,7 +28,7 @@ class AddressSearchServiceTest {
 
     @Test
     void shouldFindAddresses() throws JsonProcessingException {
-        // Arrange
+        
         ApiGouvResponseDto expectedResponse = simulateApiResponse();
 
         String expectedUrl = UriComponentsBuilder
@@ -41,10 +41,10 @@ class AddressSearchServiceTest {
         this.server
                 .expect(requestTo(expectedUrl))
                 .andRespond(withSuccess(objectMapper.writeValueAsString(expectedResponse), MediaType.APPLICATION_JSON));
-        // Act
+        
         List<ApiGouvAddressDto> addresses = this.service.findAddress(List.of("cours", "fauriel"));
 
-        // Assert
+        
         Assertions
                 .assertThat(addresses)
                 .hasSize(1)
