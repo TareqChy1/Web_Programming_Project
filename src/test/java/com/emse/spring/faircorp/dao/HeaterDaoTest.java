@@ -13,6 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@ExtendWith(SpringExtension.class)
 @DataJpaTest
 class HeaterDaoTest {
     @Autowired
@@ -33,7 +34,7 @@ class HeaterDaoTest {
         List<Long> roomIds = room.getHeaters().stream().map(Heater::getId).collect(Collectors.toList());
         Assertions.assertThat(roomIds.size()).isEqualTo(2);
 
-        heaterDao.deleteByRoom(-10L);
+        heaterDao.deleteAllHeatersByRoom(-10L);
         List<Heater> result = heaterDao.findAllById(roomIds);
         Assertions.assertThat(result).isEmpty();
 

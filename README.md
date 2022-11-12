@@ -11,7 +11,7 @@ __An application to manage a Smart Building__
 
 
 ## Context
-- - - -
+
 - The management of the users' health (Pollution), comfort, and energy consumption, require conflicting management of windows and heaters in public buildings. It is necessary to ventilate as much as possible, but the weather is cold, and the heaters need to be turned on. So the building has a window opener device, a heater remote controler and some teamperature sensors.
 - This applications allows the user to visualize the temperature of each room, the status of the windows and heaters. Also, it allows to control both the heaters and the windows of each room and also room in building and building.
 
@@ -20,7 +20,7 @@ The goal of the 2022 Web & Mobile Programing project is to implement a fully fun
 
 
 ## Project setup
-- - - -
+
 Clone the repo. The Login credential is given below. See the Login credential & run.
 - Username: user.
 - Password: password.
@@ -34,7 +34,7 @@ Anyone can now access the backend on [localhost:8080](http://localhost:8080) or 
 
 
 ## Project API
-- - - -
+
 Anyone can experiment with the API on [localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/) or on the [Deployed server](https://faircorp-tareq-chy.cleverapps.io/swagger-ui/)
 
 
@@ -206,14 +206,14 @@ Anyone can experiment with the API on [localhost:8080/swagger-ui/](http://localh
 
 
 ### NOTES
-- - - -
+
 
 - If anyone delete a room all windows and heaters inside this room will be deleted.
 - If anyone delete a building all rooms inside the building will be deleted.
 
 
 ### Contact
-- - - -
+
 
 - For reporting uses you can do it in the issues section of this repository.
 - For contacting the developer for any other reason please email me at <tareq.chy@etu.emse.fr> or <tareqfarhadbd@gmail.com>

@@ -1,5 +1,5 @@
 package com.emse.spring.faircorp.controller;
-
+import com.emse.spring.faircorp.api.WindowController;
 import com.emse.spring.faircorp.dao.RoomDao;
 import com.emse.spring.faircorp.dao.WindowDao;
 import com.emse.spring.faircorp.dto.WindowDto;
@@ -13,10 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-
 import java.util.List;
 import java.util.Optional;
-
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -26,8 +24,12 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+
+
+
 @WebMvcTest(WindowController.class)
 class WindowControllerTest {
+
     @Autowired
     private MockMvc mockMvc;
 
@@ -129,7 +131,7 @@ class WindowControllerTest {
 
     private Window createWindow(String name) {
         Room room = new Room(1, "S1");
-        return new Window( room, name, WindowStatus.OPEN);
+        return new Window(  name, WindowStatus.OPEN, room);
     }
 
 }

@@ -1,5 +1,4 @@
 package com.emse.spring.faircorp.dao;
-
 import com.emse.spring.faircorp.model.Room;
 import com.emse.spring.faircorp.model.Window;
 import com.emse.spring.faircorp.model.WindowStatus;
@@ -10,7 +9,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,7 +49,7 @@ class WindowDaoTest {
         List<Long> roomIds = room.getWindows().stream().map(Window::getId).collect(Collectors.toList());
         Assertions.assertThat(roomIds.size()).isEqualTo(2);
 
-        windowDao.deleteByRoom(-10L);
+        windowDao.deleteAllWindowsByRoom(-10L);
         List<Window> result = windowDao.findAllById(roomIds);
         Assertions.assertThat(result).isEmpty();
 

@@ -1,5 +1,5 @@
 package com.emse.spring.faircorp.controller;
-
+import com.emse.spring.faircorp.api.HeaterController;
 import com.emse.spring.faircorp.dao.HeaterDao;
 import com.emse.spring.faircorp.dao.RoomDao;
 import com.emse.spring.faircorp.dto.HeaterDto;
@@ -11,10 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-
 import java.util.List;
 import java.util.Optional;
-
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -24,8 +22,12 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+
+
+
 @WebMvcTest(HeaterController.class)
 public class HeaterControllerTest {
+
     @Autowired
     private MockMvc mockMvc;
 
@@ -37,6 +39,8 @@ public class HeaterControllerTest {
 
     @MockBean
     private RoomDao roomDao;
+
+
 
     @Test
     void shouldLoadHeaters() throws Exception {
