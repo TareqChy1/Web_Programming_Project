@@ -1,3 +1,6 @@
 package com.emse.spring.faircorp.model;
 
-public enum WindowStatus { OPEN, CLOSED }
+
+public enum WindowStatus {
+    OPEN, CLOSED
+}
