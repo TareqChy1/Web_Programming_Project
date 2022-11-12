@@ -4,7 +4,7 @@ __An application to manage a Smart Building__
 - - - -
 [Deployed Backend on Clever-Cloud](https://faircorp-tareq-chy.cleverapps.io/)
 
-- Author : Tareq Md Rabiul Hossain Chy
+- Author : [Tareq Md Rabiul Hossain Chy](https://github.com/TareqChy1)
 - Based on [Guillaume Ehret's course](https://dev-mind.fr/formations.html)
 - Backend of the 2022 Web & Mobile Programing project for [MSc CPS2 Web & Mobile programming course](https://ci.mines-stetienne.fr/cps2/syllabus/)
 
@@ -21,7 +21,9 @@ The goal of the 2022 Web & Mobile Programing project is to implement a fully fun
 
 ## Project setup
 - - - -
-Clone the repo and run
+Clone the repo. The Login credential is given below. See the Login credential & run.
+- Username: user.
+- Password: password.
 
 ```bash
 ./gradlew bootRun
