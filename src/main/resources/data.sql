@@ -1,9 +1,9 @@
-INSERT INTO BUILDING(id, name, outside_temperature) VALUES(-10, 'Building 1', 13.3);
-INSERT INTO BUILDING(id, name, outside_temperature) VALUES(-9, 'Building 2', 14.2);
-INSERT INTO BUILDING(id, name, outside_temperature) VALUES(-8, 'Building 3', 18.9);
-INSERT INTO BUILDING(id, name, outside_temperature) VALUES(-7, 'Building 4', 25.0);
-INSERT INTO BUILDING(id, name, outside_temperature) VALUES(-6, 'Building 5', 18.9);
-INSERT INTO BUILDING(id, name, outside_temperature) VALUES(-5, 'Building 5', 19.9);
+INSERT INTO BUILDING(id, name, address, outside_temperature) VALUES(-10, 'Building 1', 'RUE CHEVREUL', 13.3);
+INSERT INTO BUILDING(id, name, address, outside_temperature) VALUES(-9, 'Building 2', 'RUE NOVEMBRE', 14.2);
+INSERT INTO BUILDING(id, name, address, outside_temperature) VALUES(-8, 'Building 3', 'SAINT ETIENNE', 18.9);
+INSERT INTO BUILDING(id, name, address, outside_temperature) VALUES(-7, 'Building 4', 'RUE TOLBAC', 25.0);
+INSERT INTO BUILDING(id, name, address, outside_temperature) VALUES(-6, 'Building 5', 'CLICHY', 18.9);
+INSERT INTO BUILDING(id, name, address, outside_temperature) VALUES(-5, 'Building 5', 'ANNIER CLICHY', 19.9);
 
 INSERT INTO ROOM(id, name, floor, current_temperature, target_temperature,building_id) VALUES(-10, 'Room 1', 1, 28.3, 25.0,-10);
 INSERT INTO ROOM(id, name, floor, current_temperature, target_temperature, building_id) VALUES(-9, 'Room 2', 2, 23.3, 23.0,-8);

@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 public class BuildingCmdDto {
     private Long id;
     private String name;
+    private String address;
     private Double outsideTemperature;
     private Set<RoomCmdDto> rooms;
 
@@ -15,6 +16,7 @@ public class BuildingCmdDto {
     public BuildingCmdDto(Building building) {
         this.id = building.getId();
         this.name = building.getName();
+        this.address = building.getAddress();
         this.outsideTemperature = building.getOutsideTemperature();
         if(building.getRooms() != null) {this.rooms = building.getRooms().stream().map(RoomCmdDto::new).collect(Collectors.toSet());}
     }
@@ -33,6 +35,13 @@ public class BuildingCmdDto {
     }
     public String getName() {
         return name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public String getAddress() {
+        return address;
     }
 
 

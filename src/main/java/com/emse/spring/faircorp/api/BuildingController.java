@@ -52,12 +52,13 @@ public class BuildingController {
         Building building = null;
 
         if (dto.getId() == null) {
-            building = buildingDao.save(new Building(dto.getName(),dto.getOutsideTemperature()));
+            building = buildingDao.save(new Building(dto.getName(),dto.getAddress(),dto.getOutsideTemperature()));
         }
 
         else {
             building = buildingDao.getReferenceById(dto.getId());
             building.setName(dto.getName());
+            building.setAddress(dto.getAddress());
             building.setOutsideTemperature(dto.getOutsideTemperature());
 
         }

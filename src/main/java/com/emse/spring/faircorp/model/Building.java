@@ -13,6 +13,7 @@ public class Building {
     private Long id;
     @Column(nullable=false)
     private String name;
+    private String address;
     private Double outsideTemperature;
 
     @OneToMany(mappedBy = "building",cascade = CascadeType.REMOVE)
@@ -22,8 +23,9 @@ public class Building {
     public Building() {
     }
 
-    public Building(String name, Double outsideTemperature) {
+    public Building(String name, String address, Double outsideTemperature) {
         this.name = name;
+        this.address = address;
         this.outsideTemperature = outsideTemperature;
     }
 
@@ -49,6 +51,13 @@ public class Building {
     }
     public Double getOutsideTemperature() {
         return outsideTemperature;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public String getAddress() {
+        return address;
     }
 
 
