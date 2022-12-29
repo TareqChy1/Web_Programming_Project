@@ -16,7 +16,7 @@ __An application to manage a Smart Building__
 - The management of the users' health (Pollution), comfort, and energy consumption, require conflicting management of windows and heaters in public buildings. It is necessary to ventilate as much as possible, but the weather is cold, and the heaters need to be turned on. So the building has a window opener device, a heater remote controler and some teamperature sensors.
 - This applications allows the user to visualize the temperature of each room, the status of the windows and heaters. Also, it allows to control both the heaters and the windows of each room and also room in building and building.
 
-The goal of the 2022 Web & Mobile Programing project is to implement a fully functional Smart Building management system(especially building, rooms, windows and heaters controllers). The project is composed of a [Java SpringBoot Backend server](https://github.com/TareqChy1/Web_Programming_Project), an [Android Kotlin Application]() and a [VueJS Frontend server]() interacting together.
+The goal of the 2022 Web & Mobile Programing project is to implement a fully functional Smart Building management system(especially building, rooms, windows and heaters controllers). The project is composed of a [Java SpringBoot Backend server](https://github.com/TareqChy1/Web_Programming_Project), an [Android Kotlin Application](https://github.com/TareqChy1/Faircorp-Android-App) and a [VueJS Frontend server](https://github.com/TareqChy1/Faircorp-VueJS) interacting together.
 
 
 
