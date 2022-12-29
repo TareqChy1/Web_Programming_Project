@@ -8,7 +8,8 @@ __An application to manage a Smart Building__
 - Based on [Guillaume Ehret's course](https://dev-mind.fr/formations.html)
 - Backend of the 2022 Web & Mobile Programing project for [MSc CPS2 Web & Mobile programming course](https://ci.mines-stetienne.fr/cps2/syllabus/)
 
-
+### License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Context
 
@@ -201,7 +202,6 @@ Anyone can experiment with the API on [localhost:8080/swagger-ui/](http://localh
 - Request Type: DELETE
 - Endpoint: /api/buildings/{buildingId}
 - {buildingId}: A Long Integer
-
 
 
 
