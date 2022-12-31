@@ -14,7 +14,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 /**
  * SpringSecurityConfig helps to add authentication and authorization to  web application.
- * @Configuration tells Spring container that there is one or more beans that needs to be dealt with on runtime.
+ * `@Configuration` tells Spring container that there is one or more beans that needs to be dealt with on runtime.
  */
 @Configuration
 public class SpringSecurityConfig {

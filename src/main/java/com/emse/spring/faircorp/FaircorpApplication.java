@@ -24,7 +24,7 @@ public class FaircorpApplication {
 	 * FaircorpApplication is a bootable class because it contains a main class.
 	 * SpringApplication is a predefine class in the spring boot and run is a static method which is available in this class.
 	 * @param args the application's  arguments (usually passed from a Java main method).
-	 * @return the running ApplicationContext.
+	 * `@return` the running ApplicationContext.
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(FaircorpApplication.class, args);
