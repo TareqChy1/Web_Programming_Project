@@ -122,7 +122,7 @@ public class WindowController {
     /**
      * This method is used for deleting the window using windowId.
      * `@DeleteMapping` specifies that HTTP DELETE requests to  /windows/{windowId} are mapped to delete() method.
-     * `@PathVariable` used to bind the path variable “windowId” to the method parameter Long windowId.
+     * `@PathVariable` used to bind the path variable windowId to the method parameter Long windowId.
      */
     //For deleting the window
     @DeleteMapping(path = "/{windowId}")
