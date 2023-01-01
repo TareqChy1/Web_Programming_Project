@@ -8,6 +8,14 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// For logging portion:
+// https://stackabuse.com/guide-to-logging-in-spring-boot/
+// https://www.quickprogrammingtips.com/spring-boot/using-log4j2-with-spring-boot.html
+// https://www.slf4j.org/manual.html#typical_usage
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 @CrossOrigin
@@ -18,17 +26,19 @@ public class HeaterController {
     private final HeaterDao heaterDao;
     private final RoomDao roomDao;
 
-
+    //logging part
+    private static final Logger logging = LoggerFactory.getLogger(HeaterController.class);
     public HeaterController(HeaterDao heaterDao, RoomDao roomDao) {
         this.heaterDao = heaterDao;
         this.roomDao = roomDao;
     }
 
 
-
     //For getting heater all list
     @GetMapping
     public List<HeaterDto> findAll() {
+        //logging part
+        logging.info("Searching all heaters list");
         return heaterDao.findAll().stream().map(HeaterDto::new).collect(Collectors.toList());
     }
 
@@ -36,6 +46,8 @@ public class HeaterController {
     ////For getting heater by using heaterId
     @GetMapping(path = "/{heaterId}")
     public HeaterDto findById(@PathVariable Long heaterId) {
+        //logging part
+        logging.info("Searching  heater using heaterId");
         return heaterDao.findById(heaterId).map(HeaterDto::new).orElse(null);
     }
 
@@ -51,6 +63,8 @@ public class HeaterController {
     @PutMapping(path = "/{heaterId}/switch")
     public HeaterDto switchStatus(@PathVariable Long heaterId) {
         Heater heater = heaterDao.findById(heaterId).orElseThrow(IllegalArgumentException::new);
+        //logging part
+        logging.info("Switched heater status");
         heater.setHeaterStatus(heater.getHeaterStatus() == HeaterStatus.ON ? HeaterStatus.OFF: HeaterStatus.ON);
         return new HeaterDto(heater);
     }
@@ -83,6 +97,8 @@ public class HeaterController {
     //For deleting heater
     @DeleteMapping(path = "/{heaterId}")
     public void delete(@PathVariable Long heaterId) {
+        //logging part
+        logging.warn("Removed heater");
         heaterDao.deleteById(heaterId);
     }
 

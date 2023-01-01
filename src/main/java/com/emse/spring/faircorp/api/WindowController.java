@@ -9,6 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
+// For logging portion:
+// https://stackabuse.com/guide-to-logging-in-spring-boot/
+// https://www.quickprogrammingtips.com/spring-boot/using-log4j2-with-spring-boot.html
+// https://www.slf4j.org/manual.html#typical_usage
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 /**
@@ -29,7 +37,8 @@ public class WindowController {
     private final WindowDao windowDao;
     private final RoomDao roomDao;
 
-
+    //logging part
+    private static final Logger logging = LoggerFactory.getLogger(WindowController.class);
     public WindowController(WindowDao windowDao, RoomDao roomDao) {
         this.windowDao = windowDao;
         this.roomDao = roomDao;
@@ -45,6 +54,8 @@ public class WindowController {
     //For getting all window list
     @GetMapping
     public List<WindowDto> findAll() {
+        //logging part
+        logging.info("Searching all window list");
         return windowDao.findAll().stream().map(WindowDto::new).collect(Collectors.toList());
     }
 
@@ -57,6 +68,8 @@ public class WindowController {
     //For getting window by using windowId
     @GetMapping(path = "/{windowId}")
     public WindowDto findById(@PathVariable Long windowId) {
+        //logging part
+        logging.info("Searching  room using windowId");
         return windowDao.findById(windowId).map(WindowDto::new).orElse(null);
     }
 
@@ -88,6 +101,8 @@ public class WindowController {
     @PutMapping(path = "/{windowId}/switch")
     public WindowDto switchStatus(@PathVariable Long windowId) {
         Window window = windowDao.findById(windowId).orElseThrow(IllegalArgumentException::new);
+        //logging part
+        logging.info("Switched windows status");
         window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED: WindowStatus.OPEN);
         return new WindowDto(window);
     }
@@ -127,6 +142,8 @@ public class WindowController {
     //For deleting the window
     @DeleteMapping(path = "/{windowId}")
     public void delete(@PathVariable Long windowId) {
+        //logging part
+        logging.warn("Removed window");
         windowDao.deleteById(windowId);
     }
 

@@ -11,7 +11,13 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// For logging portion:
+// https://stackabuse.com/guide-to-logging-in-spring-boot/
+// https://www.quickprogrammingtips.com/spring-boot/using-log4j2-with-spring-boot.html
+// https://www.slf4j.org/manual.html#typical_usage
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @CrossOrigin
 @RestController
@@ -22,6 +28,9 @@ public class BuildingController {
     private final RoomDao roomDao;
     private final WindowDao windowDao;
     private final HeaterDao heaterDao;
+
+    //logging part
+    private static final Logger logging = LoggerFactory.getLogger(BuildingController.class);
 
     public BuildingController(BuildingDao buildingDao, RoomDao roomDao, WindowDao windowDao, HeaterDao heaterDao) {
         this.buildingDao = buildingDao;
@@ -34,6 +43,8 @@ public class BuildingController {
     // For getting building list
     @GetMapping
     public List<BuildingCmdDto> findAll() {
+        //logging part
+        logging.info("Searching all buildings list");
         return buildingDao.findAll().stream().map(BuildingCmdDto::new).collect(Collectors.toList());
     }
 
@@ -41,6 +52,8 @@ public class BuildingController {
     //For getting building by using buildingId
     @GetMapping(path = "/{buildingId}")
     public BuildingCmdDto findById(@PathVariable Long buildingId) {
+        //logging part
+        logging.info("Searching  room using buildingId");
         return buildingDao.findById(buildingId).map(BuildingCmdDto::new).orElse(null);
     }
 
@@ -70,6 +83,8 @@ public class BuildingController {
     //For deleting building
     @DeleteMapping(path = "/{buildingId}")
     public void delete(@PathVariable Long buildingId) {
+        //logging part
+        logging.warn("Removed building");
         buildingDao.deleteById(buildingId);
     }
 

@@ -6,11 +6,21 @@ import com.emse.spring.faircorp.dao.WindowDao;
 import com.emse.spring.faircorp.dto.RoomDto;
 import com.emse.spring.faircorp.dto.RoomCmdDto;
 import com.emse.spring.faircorp.model.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+// For logging portion:
+// https://stackabuse.com/guide-to-logging-in-spring-boot/
+// https://www.quickprogrammingtips.com/spring-boot/using-log4j2-with-spring-boot.html
+// https://www.slf4j.org/manual.html#typical_usage
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @CrossOrigin
@@ -24,6 +34,8 @@ public class RoomController {
     private final WindowDao windowDao;
     private final HeaterDao heaterDao;
 
+    //logging part
+    private static final Logger logging = LoggerFactory.getLogger(RoomController.class);
 
     public RoomController(BuildingDao buildingDao, RoomDao roomDao, WindowDao windowDao, HeaterDao heaterDao) {
         this.buildingDao = buildingDao;
@@ -33,9 +45,12 @@ public class RoomController {
     }
 
 
+
     //For getting all room list
     @GetMapping
     public List<RoomCmdDto> findAll() {
+        //logging part
+        logging.info("Searching all rooms list");
         return roomDao.findAll().stream().map(RoomCmdDto::new).collect(Collectors.toList());
     }
 
@@ -43,6 +58,8 @@ public class RoomController {
     //For getting room by using roomId
     @GetMapping(path = "/{roomId}")
     public RoomCmdDto findById(@PathVariable Long roomId) {
+        //logging part
+        logging.info("Searching  room using roomId");
         return roomDao.findById(roomId).map(RoomCmdDto::new).orElse(null);
     }
 
@@ -58,6 +75,8 @@ public class RoomController {
     @PutMapping(path = "/{roomId}/switchWindows")
     public RoomDto switchWindows(@PathVariable Long roomId) {
         Room room = roomDao.getReferenceById(roomId);
+        //logging part
+        logging.info("Switched windows status");
         room.getWindows().forEach(window ->window.
                 setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED: WindowStatus.OPEN));
         return new RoomDto(room);
@@ -68,6 +87,8 @@ public class RoomController {
     @PutMapping(path = "/{roomId}/switchHeaters")
     public RoomDto switchHeaters(@PathVariable Long roomId) {
         Room room = roomDao.getReferenceById(roomId);
+        //logging part
+        logging.info("Switched heater status");
         room.getHeaters().forEach(heater ->heater.
                 setHeaterStatus(heater.getHeaterStatus() == HeaterStatus.ON ? HeaterStatus.OFF: HeaterStatus.ON));
         return new RoomDto(room);
@@ -101,6 +122,8 @@ public class RoomController {
     //For deleting the room
     @DeleteMapping(path = "/{roomId}")
     public void delete(@PathVariable Long roomId) {
+        //logging part
+        logging.warn("Removed room");
         roomDao.deleteById(roomId);
     }
 
