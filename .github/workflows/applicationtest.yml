@@ -1,5 +1,6 @@
 # check information: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
+
 name: Application CI tests with Gradle
 
 on:
@@ -28,3 +29,5 @@ jobs:
           arguments: build
       - name: applicationTest with Gradle
         run: ./gradlew test
+
+        
