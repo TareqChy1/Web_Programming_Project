@@ -39,6 +39,27 @@ Anyone can now access the backend on [localhost:8080](http://localhost:8080) or 
 Anyone can experiment with the API on [localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/) or on the [Deployed server](https://faircorp-tareq-chy.cleverapps.io/swagger-ui/)
 
 
+## Docker 
+
+#### For JAR Files
+For getting the jar files of the application run the given command in the terminal:
+```bash
+./gradlew build
+```
+After running the command JAR Files will be  available in build/libs directory.
+
+#### Build Docker Image
+Build the image with docker build command in the terminal:
+```bash
+docker build -t faircorpdockerimage . 
+```
+
+#### Run Docker Image
+Run Docker image using given command:
+```bash
+docker run -p 8080:8080 faircorpdockerimage
+```
+
 
 ### Windows Endpoints
 #### Get Windows List:
