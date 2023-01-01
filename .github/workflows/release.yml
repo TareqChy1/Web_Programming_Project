@@ -1,5 +1,4 @@
-# reference link: https://github.com/marketplace/actions/automatic-releases
-
+# source link: https://github.com/marketplace/actions/automatic-releases
 
 
 name: "tagged-release"
@@ -26,4 +25,3 @@ jobs:
           files: |
             LICENSE
             *.jar
-            
