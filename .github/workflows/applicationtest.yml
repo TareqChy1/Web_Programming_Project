@@ -1,5 +1,4 @@
-# check information: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
-
+# source link for more information: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
 name: Application CI tests with Gradle
 
