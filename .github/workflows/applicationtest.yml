@@ -30,4 +30,3 @@ jobs:
       - name: applicationTest with Gradle
         run: ./gradlew test
 
-        

@@ -1,5 +1,7 @@
 # reference link: https://github.com/marketplace/actions/automatic-releases
 
+
+
 name: "tagged-release"
 
 on:
@@ -13,7 +15,6 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-
       - name: "Build & test"
         run: |
           echo "done!"
@@ -25,3 +26,4 @@ jobs:
           files: |
             LICENSE
             *.jar
+            
