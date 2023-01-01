@@ -1,6 +1,5 @@
 # source link: https://github.com/marketplace/actions/automatic-releases
 
-
 name: "tagged-release"
 
 on:
