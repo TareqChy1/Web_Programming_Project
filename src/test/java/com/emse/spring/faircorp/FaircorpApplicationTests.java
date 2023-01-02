@@ -1,6 +1,7 @@
 package com.emse.spring.faircorp;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 
 /**
  * The`@SpringBootTest` annotation is used to bootstrap the entire container.
@@ -9,12 +10,12 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 
 @SpringBootTest
-
 /**
  * This is the test file of FaircorpApplication.
  * In this all files are tested and verified.
  */
 public class FaircorpApplicationTests {
+
 
 	@Test
 	public void contextLoads() {
